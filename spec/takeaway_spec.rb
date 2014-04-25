@@ -4,13 +4,16 @@ describe Takeaway do
 
 let(:takeaway) { Takeaway.new }
 
+  context 'the menu' do 
 
-
-          it 'should be a menu' do 
-            cuisine = { :lasagne => 8, :bolognase => 6, :carbonara => 5, :seafood => 4 }
+          it 'list of items on the menu' do 
+            cuisine = {   :lasagne => 8,
+                          :bolognase => 6,
+                          :carbonara => 5, 
+                          :seafood => 4 }
             expect(takeaway.cuisine).to eq cuisine
           end
-
+        end
 
          it 'placing an order' do 
             expect(takeaway.placing_order({ :lasagne => 1, :seafood => 2 }, 16)).to be_true
@@ -23,6 +26,7 @@ let(:takeaway) { Takeaway.new }
             
         end
 
+     
       
 
 
