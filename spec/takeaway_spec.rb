@@ -26,7 +26,10 @@ let(:takeaway) { Takeaway.new }
             
         end
 
-     
+        it 'sends an sms to a customer when their order has been successful' do
+          expect(takeaway).to receive(:send_text).and_return true 
+          takeaway.placing_order({ :lasagne => 1, :seafood => 2 }, 16)
+        end 
       
 
 
